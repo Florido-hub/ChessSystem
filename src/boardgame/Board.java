@@ -1,5 +1,7 @@
 package boardgame;
 
+import chess.ChessPiece;
+
 public class Board {
     private int linhas;
     private int colunas;
@@ -33,5 +35,10 @@ public class Board {
 
     public Piece piece(Position position){
         return pieces[position.getLinha()][position.getColuna()];
+    }
+
+    public void PlacePiece(Piece piece, Position position){
+        pieces[position.getLinha()][position.getColuna()] = piece;
+        piece.position = position;
     }
 }
